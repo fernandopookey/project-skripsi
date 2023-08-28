@@ -1,0 +1,23 @@
+.tabs-content {
+    margin-top: 30px;
+}
+
+.rows {
+    padding-top: 50px;
+}
+
+.image-gallery {
+    width: 50%;
+    padding: 30px 30px 30px 10px;
+    border-radius: 10%;
+    // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    //     0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: .3s;
+    cursor: pointer;
+
+    &:hover {
+        -ms-transform: scale(0.1);
+        -webkit-transform: scale(1.08);
+        transform: scale(1.1);
+    }
+}

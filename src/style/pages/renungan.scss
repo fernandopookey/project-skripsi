@@ -1,0 +1,48 @@
+.renungan-container {
+    // background-color: aqua;
+    margin-bottom: 50px;
+}
+
+.renungan-content {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.renungan-row {
+    justify-content: center;
+}
+
+.data-columns {
+    margin-bottom: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: .5s;
+
+    &:hover {
+        -ms-transform: scale(0.1);
+        /* IE 9 */
+        -webkit-transform: scale(1.08);
+        /* Safari 3-8 */
+        transform: scale(1.1);
+    }
+}
+
+.renungan-data {
+    padding: 20px 10px 20px 10px;
+
+    button {
+        background-color: rgb(58, 58, 245);
+        color: white;
+        padding: 5px;
+        border: none;
+        text-align: center;
+        border-radius: 5px;
+
+        &:hover {
+            background-color: rgb(0, 0, 194);
+        }
+    }
+}

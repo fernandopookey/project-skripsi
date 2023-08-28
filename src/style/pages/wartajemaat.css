@@ -1,0 +1,29 @@
+.page-heading {
+  text-align: center;
+  background-color: #074f57;
+  background-image: url("bible1.jpeg");
+  color: rgb(0, 0, 0);
+  font-size: 25px;
+  font-weight: 100;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.warta-content {
+  text-align: center;
+  margin-top: 45px;
+  padding-bottom: 10px;
+}
+
+.warta-table-head {
+  border-top: 1px solid rgb(206, 206, 202);
+  border-bottom: 1px solid rgb(206, 206, 202);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.warta-data-table {
+  margin-top: 20px;
+}/*# sourceMappingURL=wartajemaat.css.map */

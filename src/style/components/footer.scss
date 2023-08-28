@@ -1,0 +1,84 @@
+.main-footer-content {
+    font-family: "Poppins", sans-serif;
+    position: relative;
+    font-size: 15px;
+    text-align: center;
+    border-top: 1px solid rgb(206, 206, 202);
+    height: 250px;
+    border-bottom: 1px solid;
+    background-color: rgb(217, 219, 219);
+
+    .contact-content {
+        // background-color: aqua;
+        margin-top: 10px;
+    }
+
+    .end-footer {
+        background-color: rgb(241, 240, 238);
+        border-top: 1px solid;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        .end-footer-content {
+            padding-top: 10px;
+        }
+    }
+
+    @include phone {
+        // background-color: bisque;
+
+        .img-content {
+            // background-color: aqua;
+            margin-bottom: 40px;
+        }
+
+        .alamat-home {
+            margin-bottom: 40px;
+            text-align: left;
+            // border-bottom: 1px solid rgb(206, 206, 202);
+        }
+
+        .rekening-home {
+            text-align: right;
+            border-left: 1px solid rgb(206, 206, 202);
+            // border-bottom: 1px solid rgb(206, 206, 202);
+        }
+    }
+
+    @include tablet {
+        text-align: left;
+    }
+
+    @include desktop {
+        h5 {
+            font-weight: 500;
+        }
+
+        p {
+            font-weight: 100;
+        }
+
+        .alamat-home {
+            border-left: 1px solid rgb(206, 206, 202);
+        }
+
+        .rekening-home {
+            border-left: 1px solid rgb(206, 206, 202);
+        }
+
+        .sosmed-home {
+            border-left: 1px solid rgb(206, 206, 202);
+
+            .sosmed-home-content {
+                display: flex;
+                flex-direction: column;
+
+                .footer-icon-home {
+                    color: rgb(17, 0, 255);
+
+                }
+            }
+        }
+    }
+}

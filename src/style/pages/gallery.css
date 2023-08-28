@@ -1,0 +1,18 @@
+.tabs-content {
+  margin-top: 30px;
+}
+
+.rows {
+  padding-top: 50px;
+}
+
+.image-gallery {
+  width: 50%;
+  padding: 30px 30px 30px 10px;
+  border-radius: 10%;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.image-gallery:hover {
+  transform: scale(1.1);
+}/*# sourceMappingURL=gallery.css.map */

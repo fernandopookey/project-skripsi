@@ -1,0 +1,98 @@
+.main {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+}
+
+.body {
+  margin-top: 100px;
+
+  .slider-content {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    // background-color: aqua;
+  }
+}
+
+.tab-class-home {
+  background-color: rgb(143, 145, 145);
+  color: rgb(187, 23, 23);
+  color: red;
+}
+
+.border-line {
+  border-width: 2px;
+  color: bisque;
+}
+
+.warta-container-home {
+  background-color: aqua;
+}
+
+.nav-link-home-jadwal {
+  background-color: aqua;
+}
+
+.btn-home-jadwal {
+  // background-color: aqua;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.jadwal-home-row {
+  justify-content: center;
+}
+
+.data-home-columns {
+  text-align: center;
+  padding: 15px 5px 15px 5px;
+  margin-bottom: 50px;
+  margin: 0px 20px 5px 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: .5s;
+
+  &:hover {
+    -ms-transform: scale(0.1);
+    /* IE 9 */
+    -webkit-transform: scale(1.08);
+    /* Safari 3-8 */
+    transform: scale(1.1);
+  }
+}
+
+.home-jadwal-data {
+  // padding: 20px 10px 20px 10px;
+
+  button {
+    background-color: rgb(58, 58, 245);
+    color: white;
+    padding: 5px;
+    border: none;
+    text-align: center;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: rgb(0, 0, 194);
+    }
+  }
+}
+
+.btn-tata-home {
+  // background-color: aqua;
+  display: inline-block;
+
+  .button-home-tata-ibadah {
+    background-color: rgb(58, 58, 245);
+    color: white;
+    padding: 5px;
+    border: none;
+    text-align: center;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: rgb(0, 0, 194);
+    }
+  }
+}

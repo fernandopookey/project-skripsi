@@ -1,0 +1,58 @@
+@mixin phone {
+    @media (min-width: 300px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: 630px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: 992px) {
+        @content;
+    }
+}
+
+.main-navbar {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-navbar {
+    font-family: "Poppins", sans-serif;
+    background-color: rgb(255, 255, 255);
+    font-size: 15px;
+
+    .nav-link {
+        display: flex;
+        flex-direction: column;
+        color: black;
+        margin-left: 5px;
+
+        &:hover {
+            background-color: rgb(216, 223, 223);
+            border-radius: 10px;
+        }
+    }
+
+    .nav-link.active {
+        background-color: rgb(155, 156, 156);
+        border-radius: 10px;
+    }
+
+    @media (max-width: 640px) {
+        // background-color: aqua;
+
+        #all-nav-link {
+            background-color: aqua;
+        }
+    }
+}

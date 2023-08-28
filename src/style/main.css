@@ -1,0 +1,350 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&family=Poppins:ital,wght@0,400;0,600;1,400;1,500;1,600&display=swap");
+.main {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+}
+
+.body {
+  margin-top: 100px;
+}
+.body .slider-content {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.tab-class-home {
+  background-color: rgb(143, 145, 145);
+  color: rgb(187, 23, 23);
+  color: red;
+}
+
+.border-line {
+  border-width: 2px;
+  color: bisque;
+}
+
+.nav-link-home-jadwal {
+  background-color: aqua;
+}
+
+.btn-home-jadwal {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.jadwal-home-row {
+  justify-content: center;
+}
+
+.data-home-columns {
+  text-align: center;
+  padding: 15px 5px 15px 5px;
+  margin-bottom: 50px;
+  margin: 0px 20px 5px 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: 0.5s;
+}
+.data-home-columns:hover {
+  /* IE 9 */
+  /* Safari 3-8 */
+  transform: scale(1.1);
+}
+
+.home-jadwal-data button {
+  background-color: rgb(58, 58, 245);
+  color: white;
+  padding: 5px;
+  border: none;
+  text-align: center;
+  border-radius: 5px;
+}
+.home-jadwal-data button:hover {
+  background-color: rgb(0, 0, 194);
+}
+
+.btn-tata-home {
+  display: inline-block;
+}
+.btn-tata-home .button-home-tata-ibadah {
+  background-color: rgb(58, 58, 245);
+  color: white;
+  padding: 5px;
+  border: none;
+  text-align: center;
+  border-radius: 5px;
+}
+.btn-tata-home .button-home-tata-ibadah:hover {
+  background-color: rgb(0, 0, 194);
+}
+
+.page-heading {
+  text-align: center;
+  background-color: #074f57;
+  background-image: url("bible1.jpeg");
+  color: rgb(0, 0, 0);
+  font-size: 25px;
+  font-weight: 100;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.warta-content {
+  text-align: center;
+  margin-top: 45px;
+  padding-bottom: 10px;
+}
+
+.warta-table-head {
+  border-top: 1px solid rgb(206, 206, 202);
+  border-bottom: 1px solid rgb(206, 206, 202);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.warta-data-table {
+  margin-top: 20px;
+}
+
+.page-heading {
+  text-align: center;
+  background-color: #074f57;
+  background-image: url("bible1.jpeg");
+  color: rgb(0, 0, 0);
+  font-size: 25px;
+  font-weight: 100;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.jadwal-content {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.renungan-container {
+  margin-bottom: 50px;
+}
+
+.renungan-content {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.renungan-row {
+  justify-content: center;
+}
+
+.data-columns {
+  margin-bottom: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: 0.5s;
+}
+.data-columns:hover {
+  /* IE 9 */
+  /* Safari 3-8 */
+  transform: scale(1.1);
+}
+
+.renungan-data {
+  padding: 20px 10px 20px 10px;
+}
+.renungan-data button {
+  background-color: rgb(58, 58, 245);
+  color: white;
+  padding: 5px;
+  border: none;
+  text-align: center;
+  border-radius: 5px;
+}
+.renungan-data button:hover {
+  background-color: rgb(0, 0, 194);
+}
+
+.tabs-content {
+  margin-top: 30px;
+}
+
+.rows {
+  padding-top: 50px;
+}
+
+.image-gallery {
+  width: 50%;
+  padding: 30px 30px 30px 10px;
+  border-radius: 10%;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.image-gallery:hover {
+  transform: scale(1.1);
+}
+
+.artikel-container {
+  margin-bottom: 50px;
+}
+
+.artikel-content {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.artikel-row {
+  justify-content: left;
+}
+
+.data-columns {
+  margin-bottom: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: 0.5s;
+}
+.data-columns:hover {
+  /* IE 9 */
+  /* Safari 3-8 */
+  transform: scale(1.1);
+}
+
+.artikel-data {
+  padding: 20px 10px 20px 10px;
+}
+.artikel-data button {
+  background-color: rgb(58, 58, 245);
+  color: white;
+  padding: 5px;
+  border: none;
+  text-align: center;
+  border-radius: 5px;
+}
+.artikel-data button:hover {
+  background-color: rgb(0, 0, 194);
+}
+
+.artikel-lainnya {
+  background-color: rgb(14, 46, 46);
+}
+
+.main-navbar {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-navbar {
+  font-family: "Poppins", sans-serif;
+  background-color: rgb(255, 255, 255);
+  font-size: 15px;
+}
+.navbar-navbar .nav-link {
+  display: flex;
+  flex-direction: column;
+  color: black;
+  margin-left: 5px;
+}
+.navbar-navbar .nav-link:hover {
+  background-color: rgb(216, 223, 223);
+  border-radius: 10px;
+}
+.navbar-navbar .nav-link.active {
+  background-color: rgb(155, 156, 156);
+  border-radius: 10px;
+}
+@media (max-width: 640px) {
+  .navbar-navbar #all-nav-link {
+    background-color: aqua;
+  }
+}
+
+.slider-content .slider-caption {
+  background-color: rgb(236, 245, 245);
+  color: black;
+}
+.slider-content .slider-title {
+  background-color: rgb(99, 117, 117);
+  background: transparent;
+}
+.slider-content img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.main-footer-content {
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  font-size: 15px;
+  text-align: center;
+  border-top: 1px solid rgb(206, 206, 202);
+  height: 250px;
+  border-bottom: 1px solid;
+  background-color: rgb(217, 219, 219);
+}
+.main-footer-content .contact-content {
+  margin-top: 10px;
+}
+.main-footer-content .end-footer {
+  background-color: rgb(241, 240, 238);
+  border-top: 1px solid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.main-footer-content .end-footer .end-footer-content {
+  padding-top: 10px;
+}
+@media (min-width: 300px) {
+  .main-footer-content .img-content {
+    margin-bottom: 40px;
+  }
+  .main-footer-content .alamat-home {
+    margin-bottom: 40px;
+    text-align: left;
+  }
+  .main-footer-content .rekening-home {
+    text-align: right;
+    border-left: 1px solid rgb(206, 206, 202);
+  }
+}
+@media (min-width: 630px) {
+  .main-footer-content {
+    text-align: left;
+  }
+}
+@media (min-width: 992px) {
+  .main-footer-content h5 {
+    font-weight: 500;
+  }
+  .main-footer-content p {
+    font-weight: 100;
+  }
+  .main-footer-content .alamat-home {
+    border-left: 1px solid rgb(206, 206, 202);
+  }
+  .main-footer-content .rekening-home {
+    border-left: 1px solid rgb(206, 206, 202);
+  }
+  .main-footer-content .sosmed-home {
+    border-left: 1px solid rgb(206, 206, 202);
+  }
+  .main-footer-content .sosmed-home .sosmed-home-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .main-footer-content .sosmed-home .sosmed-home-content .footer-icon-home {
+    color: rgb(17, 0, 255);
+  }
+}/*# sourceMappingURL=main.css.map */

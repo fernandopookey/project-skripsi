@@ -1,0 +1,12 @@
+.slider-content .slider-caption {
+  background-color: rgb(236, 245, 245);
+  color: black;
+}
+.slider-content .slider-title {
+  background-color: rgb(99, 117, 117);
+  background: transparent;
+}
+.slider-content img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}/*# sourceMappingURL=slider.css.map */
