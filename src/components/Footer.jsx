@@ -12,75 +12,49 @@ import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="mt-3 pb-4 main-footer-content">
-      <Container className="pt-3 align-item-center">
+    <div className="main-footer">
+      <Container className="main-content-footer">
         <Row>
-          <Col className="columns">
-            <div className="img-content">
-              <img src={Map} alt="" width="200px" height="100px" />
-              <div className="contact-content">
-                <h5>Kontak</h5>
-                <p>085254143531 Fernando</p>
-              </div>
-            </div>
+          <Col className="content-map-footer" xs={12} md={6} lg={3}>
+            <NavLink
+              to="https://www.google.com/maps/place/Gereja+Kristen+Jawa+Salib+Putih/@-7.360398,110.4760591,17z/data=!3m1!4b1!4m6!3m5!1s0x2e7a799f5d74cf7d:0xbbd68af219e61b35!8m2!3d-7.360398!4d110.478634!16s%2Fg%2F11fn79hm38?entry=ttu"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={Map}
+                alt=""
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-map-image"
+              />
+            </NavLink>
           </Col>
-          <Col className="columns alamat-home">
+          <Col xs={12} md={6} lg={3}>
             <h5>Alamat</h5>
             <p>
               Jl. Hasanudin KM. 04 Kumpulrejo, Kec. Argomulyo Kota Salatiga,
               Jawa Tengah
             </p>
-            <h5>Email</h5>
-            <p>nandopookey@gmail.com</p>
           </Col>
-          <Col className="columns rekening-home">
-            <h5>No Rekening</h5>
-            <p>a.n GKJ Salib Putih Salatiga 5438690836 BNI</p>
-            <p>a.n GKJ Salib Putih Salatiga 5237478857 BRI</p>
+          <Col xs={12} md={6} lg={3}>
+            <h5>Rekening</h5>
+            <p>a.n GKJ Salib Putih 76845675487 BRI</p>
+            <p>a.n GKJ Salib Putih 76576876876 BNI</p>
           </Col>
-          <Col className="columns sosmed-home">
+          <Col xs={12} md={6} lg={3}>
             <h5>Sosial Media</h5>
-            <div className="sosmed-home-content">
-              <NavLink
-                to="https://www.facebook.com/"
-                target="blank"
-                rel="noopener noreferrer"
-              >
-                <AiOutlineFacebook className="footer-icon-home" size={25} />
-              </NavLink>
-              <NavLink
-                to="https://www.facebook.com/"
-                target="blank"
-                rel="noopener noreferrer"
-              >
-                <AiOutlineInstagram className="footer-icon-home" size={25} />
-              </NavLink>
-              <NavLink
-                to="https://www.facebook.com/"
-                target="blank"
-                rel="noopener noreferrer"
-              >
-                <AiFillTwitterCircle className="footer-icon-home" size={25} />
-              </NavLink>
-              <NavLink
-                to="https://www.facebook.com/"
-                target="blank"
-                rel="noopener noreferrer"
-              >
-                <AiOutlineYoutube className="footer-icon-home" size={25} />
-              </NavLink>
+            <div className="footer-sosmed-icon">
+              <AiOutlineYoutube size={35} />
+              <AiOutlineInstagram size={33} />
+              <AiOutlineFacebook size={32} />
+              <AiFillTwitterCircle size={33} />
             </div>
           </Col>
         </Row>
       </Container>
-      <div className="end-footer">
-        <Container>
-          <Row>
-            <div className="end-footer-content">
-              <p>Copyright © 2022 GKJ Salib Putih</p>
-            </div>
-          </Row>
-        </Container>
+      <div className="last-footer">
+        <p>Copyright © 2022 GKJ Salib Putih</p>
       </div>
     </div>
   );

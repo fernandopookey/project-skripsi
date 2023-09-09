@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Container, Row, Table } from "react-bootstrap";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import axios from "axios";
 
 const JadwalIbadah = () => {
+  const [jadwalIbadah, setJadwalIbadah] = useState([]);
+
+  useEffect(() => {
+    getJadwalIbadah();
+  }, []);
+
+  const getJadwalIbadah = async () => {
+    const response = await axios.get("http://localhost:3000/jadwalibadah");
+    setJadwalIbadah(response.data);
+  };
+
   return (
     <>
       <div className="main">
@@ -26,54 +38,26 @@ const JadwalIbadah = () => {
                     <thead>
                       <tr>
                         <th>No</th>
+                        <th>Hari/Tanggal</th>
+                        <th>Jam</th>
                         <th>Tempat</th>
-                        <th>Waktu</th>
-                        <th>Keterangan</th>
+                        <th>Deskripsi</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>Gereja Induk</td>
-                        <td>07.00 WIB</td>
-                        <td>Bahasa Jawa</td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>Gereja Induk</td>
-                        <td>09.00 WIB</td>
-                        <td>Bahasa Indonesia</td>
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td>Pepntahan Pandanan</td>
-                        <td>08.00 WIB</td>
-                        <td>Bahasa Indonesia</td>
-                      </tr>
-                      <tr>
-                        <td>4</td>
-                        <td>Pepntahan Warak</td>
-                        <td>08.00 WIB</td>
-                        <td>Bahasa Indonesia</td>
-                      </tr>
-                      <tr>
-                        <td>5</td>
-                        <td>Pepntahan Tetep</td>
-                        <td>07.00 WIB</td>
-                        <td>Bahasa Jawa</td>
-                      </tr>
-                      <tr>
-                        <td>6</td>
-                        <td>Wilayah Kalibeji</td>
-                        <td>09.00 WIB</td>
-                        <td>Bahasa Indonesia</td>
-                      </tr>
-                      <tr>
-                        <td>7</td>
-                        <td colSpan={1}>Unit PW</td>
-                        <td>09.00</td>
-                        <td>Bahasa Jawa</td>
-                      </tr>
+                      {jadwalIbadah.map((jadwalIbadah, index) => (
+                        <tr key={jadwalIbadah.id}>
+                          <td>{index + 1}</td>
+                          <td>{jadwalIbadah.date}</td>
+                          <td>{jadwalIbadah.time}</td>
+                          <td>{jadwalIbadah.place}</td>
+                          <td
+                            dangerouslySetInnerHTML={{
+                              __html: jadwalIbadah.description,
+                            }}
+                          ></td>
+                        </tr>
+                      ))}
                     </tbody>
                   </Table>
                 </Col>
