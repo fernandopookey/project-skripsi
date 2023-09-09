@@ -10,16 +10,21 @@ import TataIbadah from "./pages/TataIbadah";
 import Gallery from "./pages/Gallery";
 import Artikel from "./pages/Atikel";
 import Pengumuman from "./pages/Pengumuman";
+import DetailRenungan from "./pages/DetailRenungan";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/wartajemaat" element={<WartaJemaat />} />
-        <Route path="/jadwalibadah" element={<JadwalIbadah />} />
-        <Route path="/tataibadah" element={<TataIbadah />} />
+        <Route path="/warta-jemaat" element={<WartaJemaat />} />
+        <Route path="/jadwal-ibadah" element={<JadwalIbadah />} />
+        <Route path="/tata-ibadah" element={<TataIbadah />} />
         <Route path="/renungan" element={<Renungan />} />
+        <Route
+          path="/renungan/detail-renungan/:id"
+          element={<DetailRenungan />}
+        />
         <Route path="/kegiatan" element={<Kegiatan />} />
         <Route path="/profil" element={<Profile />} />
         <Route path="/gallery" element={<Gallery />} />

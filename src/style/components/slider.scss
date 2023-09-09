@@ -4,6 +4,10 @@
     .slider-caption {
         background-color: rgb(236, 245, 245);
         color: black;
+
+        @include mobile {
+            display: none;
+        }
     }
 
     .slider-title {
@@ -13,5 +17,11 @@
 
     img {
         object-fit: cover;
+
+        @include mobile {
+            width: 100px;
+            height: 250px;
+            object-fit: cover;
+        }
     }
 }

@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Renungan = () => {
+  const [renungan, setRenungan] = useState([]);
+
+  useEffect(() => {
+    getRenungan();
+  }, []);
+
+  const getRenungan = async () => {
+    const response = await axios.get("http://localhost:3000/renungan");
+    setRenungan(response.data);
+  };
+
   return (
     <>
       <div className="main">
@@ -13,7 +26,7 @@ const Renungan = () => {
             <Row>
               <Col className="page-heading">
                 <p>
-                  Renungan Harian <br /> GKJ Salib Putih
+                  Renungan <br /> GKJ Salib Putih
                 </p>
               </Col>
             </Row>
@@ -27,72 +40,24 @@ const Renungan = () => {
             </Col>
           </Row>
           <Row className="renungan-row">
-            <Col className="columns data-columns" lg={4} md={6}>
-              <div className="renungan-data">
-                <h5 className="renungan-title">
-                  Renungan, Minggu 5 Februari 2023
-                </h5>
-                <p className="renungan-desc">
-                  Tema: Jadilah Garam dan Terang Dunia
-                </p>
-                <button type="submit">Unduh</button>
-              </div>
-            </Col>
-            <Col className="columns data-columns" lg={4} md={6}>
-              <div className="renungan-data">
-                <h5 className="renungan-title">
-                  Renungan, Minggu 5 Februari 2023
-                </h5>
-                <p className="renungan-desc">
-                  Tema: Jadilah Garam dan Terang Dunia
-                </p>
-                <button type="submit">Unduh</button>
-              </div>
-            </Col>
-            <Col className="columns data-columns" lg={4} md={6}>
-              <div className="renungan-data">
-                <h5 className="renungan-title">
-                  Renungan, Minggu 5 Februari 2023
-                </h5>
-                <p className="renungan-desc">
-                  Tema: Jadilah Garam dan Terang Dunia
-                </p>
-                <button type="submit">Unduh</button>
-              </div>
-            </Col>
-            <Col className="columns data-columns" lg={4} md={6}>
-              <div className="renungan-data">
-                <h5 className="renungan-title">
-                  Renungan, Minggu 5 Februari 2023
-                </h5>
-                <p className="renungan-desc">
-                  Tema: Jadilah Garam dan Terang Dunia
-                </p>
-                <button type="submit">Unduh</button>
-              </div>
-            </Col>
-            <Col className="columns data-columns" lg={4} md={6}>
-              <div className="renungan-data">
-                <h5 className="renungan-title">
-                  Renungan, Minggu 5 Februari 2023
-                </h5>
-                <p className="renungan-desc">
-                  Tema: Jadilah Garam dan Terang Dunia
-                </p>
-                <button type="submit">Unduh</button>
-              </div>
-            </Col>
-            <Col className="columns data-columns" lg={4} md={6}>
-              <div className="renungan-data">
-                <h5 className="renungan-title">
-                  Renungan, Minggu 5 Februari 2023
-                </h5>
-                <p className="renungan-desc">
-                  Tema: Jadilah Garam dan Terang Dunia
-                </p>
-                <button type="submit">Unduh</button>
-              </div>
-            </Col>
+            {renungan.map((renungan) => (
+              <Col className="columns data-columns" lg={4} md={6}>
+                <div className="renungan-data">
+                  <h5 className="renungan-title">{renungan.title}</h5>
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: renungan.description.substring(0, 100),
+                    }}
+                  ></p>
+                  <Link
+                    to={`/renungan/detail-renungan/${renungan.id}`}
+                    className="btn btn-primary renungan-btn"
+                  >
+                    Lihat Selengkapnya
+                  </Link>
+                </div>
+              </Col>
+            ))}
           </Row>
         </Container>
 

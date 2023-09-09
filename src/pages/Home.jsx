@@ -4,7 +4,7 @@ import Slider from "../components/Slider";
 import Header from "../components/Header";
 import "../style/main.scss";
 import Footer from "../components/Footer";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
 // ..
@@ -26,405 +26,57 @@ const Home = () => {
 
       <hr className="border-line" style={{ color: "black" }} />
 
-      {/* Jadwal Ibadah */}
-      <Container data-aos="fade-up" data-aos-delay="500">
-        <Row className="rows">
-          <Tabs defaultActiveKey="induk" id="induk" className="mb-1" fill>
-            <Tab eventKey="induk" title="Gereja Induk" className="mt-3 mb-4">
-              <Row className="jadwal-home-row">
-                <Row className="jadwal-home-row">
-                  <Table className="text-center">
-                    <thead>
-                      <tr>
-                        <th>No</th>
-                        <th>Tempat</th>
-                        <th>Waktu</th>
-                        <th>Keterangan</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>Gereja Induk</td>
-                        <td>07.00 WIB</td>
-                        <td>Bahasa Jawa</td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>Gereja Induk</td>
-                        <td>09.00 WIB</td>
-                        <td>Bahasa Indonesia</td>
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td>Pepntahan Pandanan</td>
-                        <td>08.00 WIB</td>
-                        <td>Bahasa Indonesia</td>
-                      </tr>
-                      <tr>
-                        <td>4</td>
-                        <td>Pepntahan Warak</td>
-                        <td>08.00 WIB</td>
-                        <td>Bahasa Indonesia</td>
-                      </tr>
-                    </tbody>
-                  </Table>
-                  <Row className="text-center" data-aos="fade-down">
-                    <div className="btn-tata-home">
-                      <NavLink to="/tataibadah">
-                        <button className="button-home-tata-ibadah">
-                          Lihat Jadwal Ibadah Lainnya
-                        </button>
-                      </NavLink>
-                    </div>
-                  </Row>
-                </Row>
-              </Row>
-            </Tab>
-            <Tab
-              eventKey="pandanan"
-              title="Pepanthan Pandanan"
-              className="mt-3 mb-4"
-            >
-              <Row>
-                <Table className="text-center">
-                  <thead>
-                    <tr>
-                      <th>No</th>
-                      <th>Tempat</th>
-                      <th>Waktu</th>
-                      <th>Keterangan</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>Gereja Induk</td>
-                      <td>07.00 WIB</td>
-                      <td>Bahasa Jawa</td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>Gereja Induk</td>
-                      <td>09.00 WIB</td>
-                      <td>Bahasa Indonesia</td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>Pepntahan Pandanan</td>
-                      <td>08.00 WIB</td>
-                      <td>Bahasa Indonesia</td>
-                    </tr>
-                    <tr>
-                      <td>4</td>
-                      <td>Pepntahan Warak</td>
-                      <td>08.00 WIB</td>
-                      <td>Bahasa Indonesia</td>
-                    </tr>
-                    <tr>
-                      <td>5</td>
-                      <td>Pepntahan Tetep</td>
-                      <td>07.00 WIB</td>
-                      <td>Bahasa Jawa</td>
-                    </tr>
-                    <tr>
-                      <td>6</td>
-                      <td>Wilayah Kalibeji</td>
-                      <td>09.00 WIB</td>
-                      <td>Bahasa Indonesia</td>
-                    </tr>
-                    <tr>
-                      <td>7</td>
-                      <td colSpan={1}>Unit PW</td>
-                      <td>09.00</td>
-                      <td>Bahasa Jawa</td>
-                    </tr>
-                  </tbody>
-                </Table>
-                <Row className="text-center" data-aos="fade-down">
-                  <div className="btn-tata-home">
-                    <NavLink to="/tataibadah">
-                      <button className="button-home-tata-ibadah">
-                        Lihat Jadwal Ibadah Lainnya
-                      </button>
-                    </NavLink>
-                  </div>
-                </Row>
-              </Row>
-            </Tab>
-            <Tab eventKey="warak" title="Pepanthan Warak" className="mt-4 mb-4">
-              <Row>
-                <Table className="text-center">
-                  <thead>
-                    <tr>
-                      <th>No</th>
-                      <th>Tempat</th>
-                      <th>Waktu</th>
-                      <th>Keterangan</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>Gereja Induk</td>
-                      <td>07.00 WIB</td>
-                      <td>Bahasa Jawa</td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>Gereja Induk</td>
-                      <td>09.00 WIB</td>
-                      <td>Bahasa Indonesia</td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>Pepntahan Pandanan</td>
-                      <td>08.00 WIB</td>
-                      <td>Bahasa Indonesia</td>
-                    </tr>
-                    <tr>
-                      <td>4</td>
-                      <td>Pepntahan Warak</td>
-                      <td>08.00 WIB</td>
-                      <td>Bahasa Indonesia</td>
-                    </tr>
-                    <tr>
-                      <td>5</td>
-                      <td>Pepntahan Tetep</td>
-                      <td>07.00 WIB</td>
-                      <td>Bahasa Jawa</td>
-                    </tr>
-                    <tr>
-                      <td>6</td>
-                      <td>Wilayah Kalibeji</td>
-                      <td>09.00 WIB</td>
-                      <td>Bahasa Indonesia</td>
-                    </tr>
-                    <tr>
-                      <td>7</td>
-                      <td colSpan={1}>Unit PW</td>
-                      <td>09.00</td>
-                      <td>Bahasa Jawa</td>
-                    </tr>
-                  </tbody>
-                </Table>
-                <Row className="text-center" data-aos="fade-down">
-                  <div className="btn-tata-home">
-                    <NavLink to="/tataibadah">
-                      <button className="button-home-tata-ibadah">
-                        Lihat Jadwal Ibadah Lainnya
-                      </button>
-                    </NavLink>
-                  </div>
-                </Row>
-              </Row>
-            </Tab>
-            <Tab eventKey="tetep" title="Pepanthan Tetep" className="mt-4 mb-4">
-              <Row>
-                <Table className="text-center">
-                  <thead>
-                    <tr>
-                      <th>No</th>
-                      <th>Tempat</th>
-                      <th>Waktu</th>
-                      <th>Keterangan</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>Gereja Induk</td>
-                      <td>07.00 WIB</td>
-                      <td>Bahasa Jawa</td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>Gereja Induk</td>
-                      <td>09.00 WIB</td>
-                      <td>Bahasa Indonesia</td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>Pepntahan Pandanan</td>
-                      <td>08.00 WIB</td>
-                      <td>Bahasa Indonesia</td>
-                    </tr>
-                    <tr>
-                      <td>4</td>
-                      <td>Pepntahan Warak</td>
-                      <td>08.00 WIB</td>
-                      <td>Bahasa Indonesia</td>
-                    </tr>
-                    <tr>
-                      <td>5</td>
-                      <td>Pepntahan Tetep</td>
-                      <td>07.00 WIB</td>
-                      <td>Bahasa Jawa</td>
-                    </tr>
-                    <tr>
-                      <td>6</td>
-                      <td>Wilayah Kalibeji</td>
-                      <td>09.00 WIB</td>
-                      <td>Bahasa Indonesia</td>
-                    </tr>
-                    <tr>
-                      <td>7</td>
-                      <td colSpan={1}>Unit PW</td>
-                      <td>09.00</td>
-                      <td>Bahasa Jawa</td>
-                    </tr>
-                  </tbody>
-                </Table>
-                <Row className="text-center" data-aos="fade-down">
-                  <div className="btn-tata-home">
-                    <NavLink to="/tataibadah">
-                      <button className="button-home-tata-ibadah">
-                        Lihat Jadwal Ibadah Lainnya
-                      </button>
-                    </NavLink>
-                  </div>
-                </Row>
-              </Row>
-            </Tab>
-            <Tab
-              eventKey="kalibeji"
-              title="Wilayah Kalibeji"
-              className="mt-4 mb-4"
-            >
-              <Row>
-                <Table className="text-center">
-                  <thead>
-                    <tr>
-                      <th>No</th>
-                      <th>Tempat</th>
-                      <th>Waktu</th>
-                      <th>Keterangan</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>Gereja Induk</td>
-                      <td>07.00 WIB</td>
-                      <td>Bahasa Jawa</td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>Gereja Induk</td>
-                      <td>09.00 WIB</td>
-                      <td>Bahasa Indonesia</td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>Pepntahan Pandanan</td>
-                      <td>08.00 WIB</td>
-                      <td>Bahasa Indonesia</td>
-                    </tr>
-                    <tr>
-                      <td>4</td>
-                      <td>Pepntahan Warak</td>
-                      <td>08.00 WIB</td>
-                      <td>Bahasa Indonesia</td>
-                    </tr>
-                    <tr>
-                      <td>5</td>
-                      <td>Pepntahan Tetep</td>
-                      <td>07.00 WIB</td>
-                      <td>Bahasa Jawa</td>
-                    </tr>
-                    <tr>
-                      <td>6</td>
-                      <td>Wilayah Kalibeji</td>
-                      <td>09.00 WIB</td>
-                      <td>Bahasa Indonesia</td>
-                    </tr>
-                    <tr>
-                      <td>7</td>
-                      <td colSpan={1}>Unit PW</td>
-                      <td>09.00</td>
-                      <td>Bahasa Jawa</td>
-                    </tr>
-                  </tbody>
-                </Table>
-                <Row className="text-center" data-aos="fade-down">
-                  <div className="btn-tata-home">
-                    <NavLink to="/tataibadah">
-                      <button className="button-home-tata-ibadah">
-                        Lihat Jadwal Ibadah Lainnya
-                      </button>
-                    </NavLink>
-                  </div>
-                </Row>
-              </Row>
-            </Tab>
-            <Tab eventKey="pw" title="Unit PW" className="mt-4 mb-4">
-              <Row>
-                <Table className="text-center">
-                  <thead>
-                    <tr>
-                      <th>No</th>
-                      <th>Tempat</th>
-                      <th>Waktu</th>
-                      <th>Keterangan</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>Gereja Induk</td>
-                      <td>07.00 WIB</td>
-                      <td>Bahasa Jawa</td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>Gereja Induk</td>
-                      <td>09.00 WIB</td>
-                      <td>Bahasa Indonesia</td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>Pepntahan Pandanan</td>
-                      <td>08.00 WIB</td>
-                      <td>Bahasa Indonesia</td>
-                    </tr>
-                    <tr>
-                      <td>4</td>
-                      <td>Pepntahan Warak</td>
-                      <td>08.00 WIB</td>
-                      <td>Bahasa Indonesia</td>
-                    </tr>
-                    <tr>
-                      <td>5</td>
-                      <td>Pepntahan Tetep</td>
-                      <td>07.00 WIB</td>
-                      <td>Bahasa Jawa</td>
-                    </tr>
-                    <tr>
-                      <td>6</td>
-                      <td>Wilayah Kalibeji</td>
-                      <td>09.00 WIB</td>
-                      <td>Bahasa Indonesia</td>
-                    </tr>
-                    <tr>
-                      <td>7</td>
-                      <td colSpan={1}>Unit PW</td>
-                      <td>09.00</td>
-                      <td>Bahasa Jawa</td>
-                    </tr>
-                  </tbody>
-                </Table>
-                <Row className="text-center" data-aos="fade-down">
-                  <div className="btn-tata-home">
-                    <NavLink to="/tataibadah">
-                      <button className="button-home-tata-ibadah">
-                        Lihat Jadwal Ibadah Lainnya
-                      </button>
-                    </NavLink>
-                  </div>
-                </Row>
-              </Row>
-            </Tab>
-          </Tabs>
+      {/* Video */}
+      {/* https://www.youtube.com/watch?v=z1PWp8YdWEU */}
+      {/* https://www.youtube.com/watch?v=MWIw8nXjAfQ&t=1845s */}
+      <Container>
+        <Row>
+          <Col className="text-center">
+            <h4>Kumpulan Video</h4>
+            <p>
+              Jika engkau telah berlari dengan orang berjalan kaki, dan engkau
+              telah dilelahkan, bagaimanakah engkau hendak berpacu melawan kuda?
+              Dan jika di negeri yang damai engkau tidak merasa tenteram, apakah
+              yang akan engkau perbuat di hutan belukar sungai Yordan ?
+            </p>
+          </Col>
+          <Row>
+            <Col className="d-flex mx-auto justify-content-between home-video">
+              <div>
+                <iframe
+                  width="330"
+                  height="200"
+                  src="https://www.youtube.com/embed/kMliJTsRVm4?si=_lw_PYul9hHPd9Yi"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div>
+                <iframe
+                  width="330"
+                  height="200"
+                  src="https://www.youtube.com/embed/MWIw8nXjAfQ?si=10SGq8kfBX3GwCrC"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div>
+                <iframe
+                  width="330"
+                  height="200"
+                  src="https://www.youtube.com/embed/jPMDaPihdjk?si=KzSGYUIUQSz6cE_f"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </Col>
+          </Row>
         </Row>
       </Container>
 
@@ -561,6 +213,13 @@ const Home = () => {
             <Col>Unduh</Col>
           </Row>
         </div>
+        <Row className="text-center mt-4" data-aos="fade-down">
+          <NavLink to="/tataibadah">
+            <Link to="/warta-jemaat" className="btn btn-primary">
+              Lihat Warta Lainnya
+            </Link>
+          </NavLink>
+        </Row>
       </Container>
 
       <hr className="border-line" style={{ color: "black" }} />

@@ -10,7 +10,12 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    // background-color: aqua;
+  }
+
+  .slider-title {
+    @include mobile {
+      display: none;
+    }
   }
 }
 
@@ -94,5 +99,31 @@
     &:hover {
       background-color: rgb(0, 0, 194);
     }
+  }
+}
+
+.warta-data-table {
+  @include mobile {
+    // background-color: aqua;
+  }
+}
+
+.warta-data-table {
+  @include tablet {
+    // background-color: rgb(179, 182, 2);
+  }
+}
+
+.warta-data-table {
+  @include desktop {
+    // background-color: rgb(133, 1, 89);
+  }
+}
+
+.home-video {
+  @include mobile {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
   }
 }
