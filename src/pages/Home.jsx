@@ -32,7 +32,7 @@ const Home = () => {
       <Container>
         <Row>
           <Col className="text-center">
-            <h4>Kumpulan Video</h4>
+            <h4>Kumpulan Video Ibadah</h4>
             <p>
               Jika engkau telah berlari dengan orang berjalan kaki, dan engkau
               telah dilelahkan, bagaimanakah engkau hendak berpacu melawan kuda?
