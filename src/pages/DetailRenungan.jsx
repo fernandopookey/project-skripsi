@@ -16,32 +16,13 @@ const DetailRenungan = () => {
   const [description, setDescription] = useState("");
   const { id } = useParams();
 
-  //   const updateRenungan = async (e) => {
-  //     e.preventDefault();
-  //     try {
-  //       await axios.patch(`http://localhost:3000/renungan/editrenungan/${id}`, {
-  //         title,
-  //         description,
-  //       });
-  //       swal({
-  //         title: "Sukses",
-  //         text: "Data berhasil diubah",
-  //         icon: "success",
-  //         button: "Ok",
-  //       });
-  //       navigate("/renungan");
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
-
   useEffect(() => {
     getRenunganById();
   }, []);
 
   const getRenunganById = async () => {
     const response = await axios.get(
-      `http://localhost:3000/renungan/editrenungan/${id}`
+      `${process.env.REACT_APP_GET_API}/renungan/editrenungan/${id}`
     );
     setTitle(response.data.title);
     setDescription(response.data.description);

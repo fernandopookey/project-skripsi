@@ -12,7 +12,9 @@ const JadwalIbadah = () => {
   }, []);
 
   const getJadwalIbadah = async () => {
-    const response = await axios.get("http://localhost:3000/jadwalibadah");
+    const response = await axios.get(
+      `${process.env.REACT_APP_GET_API}/jadwalibadah`
+    );
     setJadwalIbadah(response.data);
   };
 

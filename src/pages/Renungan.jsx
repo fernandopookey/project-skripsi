@@ -13,7 +13,9 @@ const Renungan = () => {
   }, []);
 
   const getRenungan = async () => {
-    const response = await axios.get("http://localhost:3000/renungan");
+    const response = await axios.get(
+      `${process.env.REACT_APP_GET_API}/renungan`
+    );
     setRenungan(response.data);
   };
 
