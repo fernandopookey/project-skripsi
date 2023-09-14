@@ -8,7 +8,7 @@ const WartaJemaat = () => {
     <>
       <div className="main">
         <Header />
-        <Container className="mt-5">
+        <Container className="mt-4 mb-4">
           <div className="body">
             <Row data-aos="fade-down" data-aos-delay="100">
               <Col className="page-heading">
@@ -17,35 +17,60 @@ const WartaJemaat = () => {
                 </p>
               </Col>
             </Row>
-            <Row data-aos="fade-left" data-aos-delay="200">
-              <div className="warta-content">
-                <Col>
-                  <h4>Unduh Warta Jemaat</h4>
-                </Col>
+            {/* Warta Jemaat */}
+            <div className="row mt-4 mb-4 text-center">
+              <div className="row">
+                <h4>Warta Jemaat</h4>
               </div>
-            </Row>
-            <div data-aos="fade-right" data-aos-delay="300">
-              <Row className="text-center warta-table-head">
-                <Col>
-                  <b>Warta Jemaat</b>
-                </Col>
-                <Col>
-                  <b>Downloaddd</b>
-                </Col>
-              </Row>
-              <div className="warta-data-table">
-                <Row className="text-center">
-                  <Col>Warta Jemaat</Col>
-                  <Col>Unduh</Col>
-                </Row>
-                <Row className="text-center">
-                  <Col>Warta Jemaat</Col>
-                  <Col>Unduh</Col>
-                </Row>
-                <Row className="text-center">
-                  <Col>Warta Jemaat</Col>
-                  <Col>Unduh</Col>
-                </Row>
+              <div className="row text-center mx-auto">
+                <div className="col-lg-12">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Warta Jemaat</th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Warta Minggu 10 September 2023</td>
+                        <td>
+                          <b>Unduh</b>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Warta Minggu 10 September 2023</td>
+                        <td>
+                          <b>Unduh</b>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Warta Minggu 10 September 2023</td>
+                        <td>
+                          <b>Unduh</b>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Warta Minggu 10 September 2023</td>
+                        <td>
+                          <b>Unduh</b>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Warta Minggu 10 September 2023</td>
+                        <td>
+                          <b>Unduh</b>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Warta Minggu 10 September 2023</td>
+                        <td>
+                          <b>Unduh</b>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </div>

@@ -45,10 +45,27 @@ const Footer = () => {
           <Col xs={12} md={6} lg={3}>
             <h5>Sosial Media</h5>
             <div className="footer-sosmed-icon">
-              <AiOutlineYoutube size={35} />
-              <AiOutlineInstagram size={33} />
-              <AiOutlineFacebook size={32} />
-              <AiFillTwitterCircle size={33} />
+              <NavLink
+                to="https://www.youtube.com/@gkjsalibputih"
+                className="btn-primary"
+              >
+                <AiOutlineYoutube size={35} />
+              </NavLink>
+              <NavLink
+                to="https://www.instagram.com/gkjsalibputih/"
+                className="btn-primary"
+              >
+                <AiOutlineInstagram size={33} />
+              </NavLink>
+              <NavLink
+                to="https://www.facebook.com/SalipPutih?locale=id_ID"
+                className="btn-primary"
+              >
+                <AiOutlineFacebook size={32} />
+              </NavLink>
+              <NavLink to="https://twitter.com/" className="btn-primary">
+                <AiFillTwitterCircle size={33} />
+              </NavLink>
             </div>
           </Col>
         </Row>

@@ -3,13 +3,17 @@
     background-color: rgb(17, 30, 212);
   }
 }
+
 @media (min-width: 630px) {
   .main-footer-content {
     background-color: bisque;
   }
 }
+
 @media (min-width: 992px) {
   .main-footer-content {
     background-color: aqua;
   }
-}/*# sourceMappingURL=footer.css.map */
+}
+
+/*# sourceMappingURL=footer.css.map */

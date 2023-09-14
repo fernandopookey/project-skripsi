@@ -11,7 +11,7 @@ import Logo from "./logogkj.png";
 
 function NavScrollExample() {
   return (
-    <Navbar className="main-navbar" expand="lg" fixed="top">
+    <Navbar className="main-navbar fixed-top" expand="lg">
       <Container className="navbar-navbar">
         <Navbar.Brand href="/" className="navbar-brand">
           <img src={Logo} alt="" style={{ width: "70px" }} />
@@ -22,7 +22,7 @@ function NavScrollExample() {
           className="navbar-toggle-mobile"
         />
         <Navbar.Collapse id="basic-navbar-nav all-nav-link">
-          <Nav className="mx-auto">
+          <Nav className="ms-auto">
             <NavLink to="/" className="nav-link">
               Home
             </NavLink>

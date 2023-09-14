@@ -39,17 +39,15 @@ const JadwalIbadah = () => {
                   <Table>
                     <thead>
                       <tr>
-                        <th>No</th>
                         <th>Hari/Tanggal</th>
                         <th>Jam</th>
                         <th>Tempat</th>
-                        <th>Deskripsi</th>
+                        <th>Keterangan</th>
                       </tr>
                     </thead>
                     <tbody>
                       {jadwalIbadah.map((jadwalIbadah, index) => (
                         <tr key={jadwalIbadah.id}>
-                          <td>{index + 1}</td>
                           <td>{jadwalIbadah.date}</td>
                           <td>{jadwalIbadah.time}</td>
                           <td>{jadwalIbadah.place}</td>

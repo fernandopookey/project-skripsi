@@ -127,3 +127,29 @@
     flex-direction: column;
   }
 }
+
+table {
+  @include mobile {
+    font-size: 13px;
+  }
+}
+
+.jadwal-ibadah-row {
+  @include mobile {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+.tata-ibadah-home {
+  @include mobile {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    .card {
+      margin-bottom: 10px;
+    }
+  }
+}

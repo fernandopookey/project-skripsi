@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Container, Row, Tab, Tabs } from "react-bootstrap";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
@@ -12,8 +12,21 @@ import Gereja7 from "../img/gereja7.jpg";
 import Gereja8 from "../img/gereja8.jpg";
 import Gereja9 from "../img/gereja9.jpg";
 import Gereja10 from "../img/gereja10.jpg";
+import axios from "axios";
 
 const Gallery = () => {
+  const [gallery, setGallery] = useState([]);
+  const getGallery = async () => {
+    const response = await axios.get(
+      `${process.env.REACT_APP_GET_API}/gallery`
+    );
+    setGallery(response.data);
+  };
+
+  useEffect(() => {
+    getGallery();
+  }, []);
+
   return (
     <>
       <div className="main">
@@ -33,41 +46,10 @@ const Gallery = () => {
               <Tab eventKey="induk" title="Gereja Induk" className="mt-3 mb-4">
                 <Row className="jadwal-home-row">
                   <div>
-                    <img src={Gereja1} alt="" className="image-gallery" />
-                    <img src={Gereja2} alt="" className="image-gallery" />
-                    <img src={Gereja3} alt="" className="image-gallery" />
-                    <img src={Gereja4} alt="" className="image-gallery" />
-                    <img src={Gereja5} alt="" className="image-gallery" />
-                    <img src={Gereja6} alt="" className="image-gallery" />
-                    <img src={Gereja7} alt="" className="image-gallery" />
-                    <img src={Gereja8} alt="" className="image-gallery" />
-                    <img src={Gereja9} alt="" className="image-gallery" />
-                    <img src={Gereja10} alt="" className="image-gallery" />
+                    {gallery.map((gallery) => (
+                      <img src={gallery.url} alt="" className="image-gallery" />
+                    ))}
                   </div>
-                </Row>
-              </Tab>
-              <Tab eventKey="kegiatan" title="Kegiatan" className="mt-3 mb-4">
-                <Row className="jadwal-home-row">
-                  <div>
-                    <img src={Gereja1} alt="" className="image-gallery" />
-                    <img src={Gereja3} alt="" className="image-gallery" />
-                    <img src={Gereja5} alt="" className="image-gallery" />
-                    <img src={Gereja7} alt="" className="image-gallery" />
-                    <img src={Gereja9} alt="" className="image-gallery" />
-                  </div>
-                </Row>
-              </Tab>
-              <Tab eventKey="ibadah" title="Ibadah" className="mt-3 mb-4">
-                <Row className="jadwal-home-row">
-                  <Row className="jadwal-home-row">
-                    <div>
-                      <img src={Gereja2} alt="" className="image-gallery" />
-                      <img src={Gereja4} alt="" className="image-gallery" />
-                      <img src={Gereja6} alt="" className="image-gallery" />
-                      <img src={Gereja8} alt="" className="image-gallery" />
-                      <img src={Gereja10} alt="" className="image-gallery" />
-                    </div>
-                  </Row>
                 </Row>
               </Tab>
             </Tabs>
