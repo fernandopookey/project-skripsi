@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Container, Row, Tab, Table, Tabs } from "react-bootstrap";
 import Slider from "../components/Slider";
 import Header from "../components/Header";
@@ -7,10 +7,24 @@ import Footer from "../components/Footer";
 import { NavLink } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
+import axios from "axios";
 // ..
 AOS.init();
 
 const Home = () => {
+  const [youtubeLink, setYoutubeLink] = useState([]);
+
+  const getYoutubeLink = async () => {
+    const response = await axios.get(
+      `${process.env.REACT_APP_GET_API}/youtubelink`
+    );
+    setYoutubeLink(response.data);
+  };
+
+  useEffect(() => {
+    getYoutubeLink();
+  }, []);
+
   return (
     <>
       <div className="main">
@@ -37,53 +51,31 @@ const Home = () => {
           <div className="row">
             <div className="col-12">
               <div className="d-flex justify-content-between home-video">
-                <div className="">
-                  <iframe
-                    width="330"
-                    height="200"
-                    src="https://www.youtube.com/embed/kMliJTsRVm4?si=_lw_PYul9hHPd9Yi"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen
-                  ></iframe>
-                  <p>Ibadah Minggu 10 September 2023</p>
-                </div>
-                <div>
-                  <iframe
-                    width="330"
-                    height="200"
-                    src="https://www.youtube.com/embed/kMliJTsRVm4?si=_lw_PYul9hHPd9Yi"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen
-                  ></iframe>
-                  <p>Ibadah Minggu 3 September 2023</p>
-                </div>
-                <div>
-                  <iframe
-                    width="330"
-                    height="200"
-                    src="https://www.youtube.com/embed/kMliJTsRVm4?si=_lw_PYul9hHPd9Yi"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen
-                  ></iframe>
-                  <p>Ibadah Minggu 27 Agustus 2023</p>
-                </div>
+                {youtubeLink.map((youtubeLink) => (
+                  <div className="col-lg-4 col-md-6 col-sm-12">
+                    <iframe
+                      width="330"
+                      height="200"
+                      src={youtubeLink.link}
+                      title="YouTube video player"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowfullscreen
+                    ></iframe>
+                    <p>{youtubeLink.title}</p>
+                  </div>
+                ))}
               </div>
-              <div className="row">
-                <div className="col-12 text-center">
-                  <NavLink
-                    target="_blank"
-                    to="https://www.youtube.com/"
-                    className="btn btn-primary btn-block"
-                  >
-                    Kunjungi Youtube Gkj Slib Putih
-                  </NavLink>
-                </div>
+            </div>
+            <div className="row">
+              <div className="col-12 text-center">
+                <NavLink
+                  target="_blank"
+                  to="https://www.youtube.com/"
+                  className="btn btn-primary btn-block"
+                >
+                  Kunjungi Youtube Gkj Slib Putih
+                </NavLink>
               </div>
             </div>
           </div>
