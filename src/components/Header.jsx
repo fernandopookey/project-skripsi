@@ -51,9 +51,6 @@ function NavScrollExample() {
               <NavDropdown.Item href="/artikel" className="nav-link">
                 Artikel
               </NavDropdown.Item>
-              <NavDropdown.Item href="/pengumuman" className="nav-link">
-                Pengumuman
-              </NavDropdown.Item>
               {/* <NavDropdown.Item href="#action/3.3">Login</NavDropdown.Item> */}
             </NavDropdown>
           </Nav>

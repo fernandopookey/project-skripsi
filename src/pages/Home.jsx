@@ -13,6 +13,7 @@ AOS.init();
 
 const Home = () => {
   const [youtubeLink, setYoutubeLink] = useState([]);
+  const [jadwalIbadah, setJadwalIbadah] = useState([]);
 
   const getYoutubeLink = async () => {
     const response = await axios.get(
@@ -23,6 +24,17 @@ const Home = () => {
 
   useEffect(() => {
     getYoutubeLink();
+  }, []);
+
+  const getJadwalIbadah = async () => {
+    const response = await axios.get(
+      `${process.env.REACT_APP_GET_API}/jadwalibadah`
+    );
+    setJadwalIbadah(response.data);
+  };
+
+  useEffect(() => {
+    getJadwalIbadah();
   }, []);
 
   return (
@@ -58,9 +70,9 @@ const Home = () => {
                       height="200"
                       src={youtubeLink.link}
                       title="YouTube video player"
-                      frameborder="0"
+                      // frameborder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowfullscreen
+                      allowFullScreen
                     ></iframe>
                     <p>{youtubeLink.title}</p>
                   </div>
@@ -87,7 +99,7 @@ const Home = () => {
             </div>
             <div className="row text-center">
               <div className="col-lg-12">
-                <table class="table table-bordered">
+                <table className="table table-bordered">
                   <thead>
                     <tr>
                       <th scope="col">Hari/Tanggal</th>
@@ -97,18 +109,18 @@ const Home = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                    </tr>
+                    {jadwalIbadah.slice(0, 3).map((jadwalIbadah) => (
+                      <tr key={jadwalIbadah.id}>
+                        <td>{jadwalIbadah.date}</td>
+                        <td>{jadwalIbadah.time}</td>
+                        <td>{jadwalIbadah.place}</td>
+                        <td
+                          dangerouslySetInnerHTML={{
+                            __html: jadwalIbadah.description,
+                          }}
+                        ></td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
@@ -130,7 +142,7 @@ const Home = () => {
             </div>
             <div className="row text-center mx-auto">
               <div className="col-lg-12">
-                <table class="table table-bordered">
+                <table className="table table-bordered">
                   <thead>
                     <tr>
                       <th scope="col">Warta Jemaat</th>

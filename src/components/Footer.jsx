@@ -48,22 +48,29 @@ const Footer = () => {
               <NavLink
                 to="https://www.youtube.com/@gkjsalibputih"
                 className="btn-primary"
+                target="_blank"
               >
                 <AiOutlineYoutube size={35} />
               </NavLink>
               <NavLink
                 to="https://www.instagram.com/gkjsalibputih/"
                 className="btn-primary"
+                target="_blank"
               >
                 <AiOutlineInstagram size={33} />
               </NavLink>
               <NavLink
                 to="https://www.facebook.com/SalipPutih?locale=id_ID"
                 className="btn-primary"
+                target="_blank"
               >
                 <AiOutlineFacebook size={32} />
               </NavLink>
-              <NavLink to="https://twitter.com/" className="btn-primary">
+              <NavLink
+                to="https://twitter.com/"
+                className="btn-primary"
+                target="_blank"
+              >
                 <AiFillTwitterCircle size={33} />
               </NavLink>
             </div>
