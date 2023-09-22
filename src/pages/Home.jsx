@@ -107,7 +107,7 @@ const Home = () => {
               <div className="col-12 text-center">
                 <NavLink
                   target="_blank"
-                  to="https://www.youtube.com/"
+                  to="https://www.youtube.com/@gkjsalibputih"
                   className="btn btn-primary btn-block"
                 >
                   Kunjungi Youtube Gkj Slib Putih
@@ -217,7 +217,7 @@ const Home = () => {
                         ></p>
                         <NavLink
                           to={`/renungan/detail-renungan/${renungan.id}`}
-                          className="btn btn-primary"
+                          className="btn btn-info"
                         >
                           Lihat Selengkapnya
                         </NavLink>
@@ -261,7 +261,7 @@ const Home = () => {
                         ></p>
                         <NavLink
                           to={`/artikel/detail-artikel/${artikel.id}`}
-                          className="btn btn-primary"
+                          className="btn btn-info"
                         >
                           Lihat Selengkapnya
                         </NavLink>

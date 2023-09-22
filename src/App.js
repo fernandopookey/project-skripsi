@@ -13,6 +13,7 @@ import DetailRenungan from "./pages/DetailRenungan";
 import WartaJemaatDownload from "./pages/WartaJemaatDownload";
 import Artikel from "./pages/Artikel";
 import DetailArtikel from "./pages/DetailArtikel";
+import TataIbadahDownload from "./pages/TataIbadahDownload";
 
 function App() {
   return (
@@ -20,13 +21,16 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/warta-jemaat" element={<WartaJemaat />} />
-        {/* <Route path="/warta-jemaat/:id" element={<WartaJemaatDownload />} /> */}
         <Route
           path="/warta-jemaat/warta-jemaat-pdf/:id"
           element={<WartaJemaatDownload />}
         />
         <Route path="/jadwal-ibadah" element={<JadwalIbadah />} />
         <Route path="/tata-ibadah" element={<TataIbadah />} />
+        <Route
+          path="/tata-ibadah/tata-ibadah-pdf/:id"
+          element={<TataIbadahDownload />}
+        />
         <Route path="/renungan" element={<Renungan />} />
         <Route
           path="/renungan/detail-renungan/:id"

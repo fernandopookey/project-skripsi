@@ -4,7 +4,6 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
-import PDF from "./tes.pdf";
 
 const WartaJemaat = () => {
   const [wartaJemaat, setWartaJemaat] = useState([]);
