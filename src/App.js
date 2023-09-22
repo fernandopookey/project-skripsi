@@ -8,9 +8,11 @@ import Profile from "./pages/Profile";
 import Kegiatan from "./pages/Kegiatan";
 import TataIbadah from "./pages/TataIbadah";
 import Gallery from "./pages/Gallery";
-import Artikel from "./pages/Atikel";
 import Pengumuman from "./pages/Pengumuman";
 import DetailRenungan from "./pages/DetailRenungan";
+import WartaJemaatDownload from "./pages/WartaJemaatDownload";
+import Artikel from "./pages/Artikel";
+import DetailArtikel from "./pages/DetailArtikel";
 
 function App() {
   return (
@@ -18,6 +20,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/warta-jemaat" element={<WartaJemaat />} />
+        {/* <Route path="/warta-jemaat/:id" element={<WartaJemaatDownload />} /> */}
+        <Route
+          path="/warta-jemaat/warta-jemaat-pdf/:id"
+          element={<WartaJemaatDownload />}
+        />
         <Route path="/jadwal-ibadah" element={<JadwalIbadah />} />
         <Route path="/tata-ibadah" element={<TataIbadah />} />
         <Route path="/renungan" element={<Renungan />} />
@@ -29,6 +36,7 @@ function App() {
         <Route path="/profil" element={<Profile />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/artikel" element={<Artikel />} />
+        <Route path="/artikel/detail-artikel/:id" element={<DetailArtikel />} />
         <Route path="/pengumuman" element={<Pengumuman />} />
       </Routes>
     </BrowserRouter>

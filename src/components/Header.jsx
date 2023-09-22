@@ -38,19 +38,25 @@ function NavScrollExample() {
             <NavLink to="/renungan" className="nav-link">
               Renungan
             </NavLink>
+            <NavLink to="/profil" className="nav-link">
+              Profil
+            </NavLink>
+            <NavLink to="/artikel" className="nav-link">
+              Profil
+            </NavLink>
             <NavDropdown title="Lainnya">
               <NavDropdown.Item href="/kegiatan" className="nav-link">
                 Kegiatan
               </NavDropdown.Item>
-              <NavDropdown.Item href="/profil" className="nav-link">
+              {/* <NavDropdown.Item href="/profil" className="nav-link">
                 Profil
-              </NavDropdown.Item>
+              </NavDropdown.Item> */}
               <NavDropdown.Item href="/gallery" className="nav-link">
                 Gallery
               </NavDropdown.Item>
-              <NavDropdown.Item href="/artikel" className="nav-link">
+              {/* <NavDropdown.Item href="/artikel" className="nav-link">
                 Artikel
-              </NavDropdown.Item>
+              </NavDropdown.Item> */}
               {/* <NavDropdown.Item href="#action/3.3">Login</NavDropdown.Item> */}
             </NavDropdown>
           </Nav>

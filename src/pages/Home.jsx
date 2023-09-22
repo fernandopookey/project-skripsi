@@ -14,6 +14,8 @@ AOS.init();
 const Home = () => {
   const [youtubeLink, setYoutubeLink] = useState([]);
   const [jadwalIbadah, setJadwalIbadah] = useState([]);
+  const [renungan, setRenungan] = useState([]);
+  const [artikel, setArtikel] = useState([]);
 
   const getYoutubeLink = async () => {
     const response = await axios.get(
@@ -35,6 +37,28 @@ const Home = () => {
 
   useEffect(() => {
     getJadwalIbadah();
+  }, []);
+
+  useEffect(() => {
+    getRenungan();
+  }, []);
+
+  const getRenungan = async () => {
+    const response = await axios.get(
+      `${process.env.REACT_APP_GET_API}/renungan`
+    );
+    setRenungan(response.data);
+  };
+
+  const getArtikel = async () => {
+    const response = await axios.get(
+      `${process.env.REACT_APP_GET_API}/artikel`
+    );
+    setArtikel(response.data);
+  };
+
+  useEffect(() => {
+    getArtikel();
   }, []);
 
   return (
@@ -136,7 +160,7 @@ const Home = () => {
           </div>
           <hr className="border-line" style={{ color: "black" }} />
           {/* Warta Jemaat */}
-          <div className="row mt-4 mb-4 text-center">
+          {/* <div className="row mt-4 mb-4 text-center">
             <div className="row">
               <h4>Warta Jemaat</h4>
             </div>
@@ -170,62 +194,81 @@ const Home = () => {
                 </NavLink>
               </div>
             </div>
-          </div>
-          <hr className="border-line" style={{ color: "black" }} />
-          {/* Tata Ibadah */}
+          </div> */}
+          {/* <hr className="border-line" style={{ color: "black" }} /> */}
+          {/* Renungan */}
           <div className="row mt-4 text-center">
             <div className="col-12">
-              <h4>Tata Ibadah</h4>
+              <h4>Renungan</h4>
             </div>
           </div>
           <div className="row">
             <div className="col-12">
               <div className="d-flex justify-content-between tata-ibadah-home">
-                <div className="">
-                  <div className="card mx-2">
-                    <div className="card-body">
-                      <b>Tata Ibadah Minggu 10 September 2023</b>
-                      <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Alias dignissimos possimus velit nesciunt corporis fugit
-                        beatae quibusdam sapiente odit id.
-                      </p>
-                      <NavLink to="#" className="btn btn-primary">
-                        Unduh
-                      </NavLink>
+                {renungan.slice(0, 3).map((renungan) => (
+                  <div className="">
+                    <div className="card mx-2">
+                      <div className="card-body">
+                        <b>{renungan.title}</b>
+                        <p
+                          dangerouslySetInnerHTML={{
+                            __html: renungan.description.substring(0, 100),
+                          }}
+                        ></p>
+                        <NavLink
+                          to={`/renungan/detail-renungan/${renungan.id}`}
+                          className="btn btn-primary"
+                        >
+                          Lihat Selengkapnya
+                        </NavLink>
+                      </div>
                     </div>
                   </div>
+                ))}
+              </div>
+              <div className="row mt-4 mb-4">
+                <div className="col-12 text-center">
+                  <NavLink
+                    to="/tata-ibadah"
+                    className="btn btn-primary btn-block"
+                  >
+                    Lihat Lainnya
+                  </NavLink>
                 </div>
-                <div>
-                  <div className="card mx-2">
-                    <div className="card-body">
-                      <b>Tata Ibadah Minggu 10 September 2023</b>
-                      <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Alias dignissimos possimus velit nesciunt corporis fugit
-                        beatae quibusdam sapiente odit id.
-                      </p>
-                      <NavLink to="#" className="btn btn-primary">
-                        Unduh
-                      </NavLink>
+              </div>
+            </div>
+          </div>
+
+          <hr className="border-line" style={{ color: "black" }} />
+          {/* Artikel */}
+          <div className="row mt-4 text-center">
+            <div className="col-12">
+              <h4>Artikel</h4>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-12">
+              <div className="d-flex justify-content-between tata-ibadah-home">
+                {artikel.slice(0, 3).map((artikel) => (
+                  <div className="">
+                    <div className="card mx-2">
+                      <div className="card-body">
+                        <b>{artikel.judul}</b>
+                        <p
+                          dangerouslySetInnerHTML={{
+                            __html: artikel.deskripsi.substring(0, 100),
+                          }}
+                        ></p>
+                        <NavLink
+                          to={`/artikel/detail-artikel/${artikel.id}`}
+                          className="btn btn-primary"
+                        >
+                          Lihat Selengkapnya
+                        </NavLink>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div>
-                  <div className="card mx-2">
-                    <div className="card-body">
-                      <b>Tata Ibadah Minggu 10 September 2023</b>
-                      <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Alias dignissimos possimus velit nesciunt corporis fugit
-                        beatae quibusdam sapiente odit id.
-                      </p>
-                      <NavLink to="#" className="btn btn-primary">
-                        Unduh
-                      </NavLink>
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
               <div className="row mt-4 mb-4">
                 <div className="col-12 text-center">

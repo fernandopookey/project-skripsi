@@ -1,9 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import { NavLink, useNavigate } from "react-router-dom";
+import axios from "axios";
+import PDF from "./tes.pdf";
 
 const WartaJemaat = () => {
+  const [wartaJemaat, setWartaJemaat] = useState([]);
+  // const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const [name, setName] = useState("");
+  const [token, setToken] = useState("");
+  const [expire, setExpire] = useState("");
+
+  useEffect(() => {
+    getWartaJemaat();
+  }, []);
+
+  const getWartaJemaat = async () => {
+    const response = await axios.get(
+      `${process.env.REACT_APP_GET_API}/wartajemaat`
+    );
+    setWartaJemaat(response.data);
+  };
+
   return (
     <>
       <div className="main">
@@ -24,7 +46,7 @@ const WartaJemaat = () => {
               </div>
               <div className="row text-center mx-auto">
                 <div className="col-lg-12">
-                  <table class="table table-bordered">
+                  <table className="table table-bordered">
                     <thead>
                       <tr>
                         <th scope="col">Warta Jemaat</th>
@@ -32,42 +54,42 @@ const WartaJemaat = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>Warta Minggu 10 September 2023</td>
-                        <td>
-                          <b>Unduh</b>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Warta Minggu 10 September 2023</td>
-                        <td>
-                          <b>Unduh</b>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Warta Minggu 10 September 2023</td>
-                        <td>
-                          <b>Unduh</b>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Warta Minggu 10 September 2023</td>
-                        <td>
-                          <b>Unduh</b>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Warta Minggu 10 September 2023</td>
-                        <td>
-                          <b>Unduh</b>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Warta Minggu 10 September 2023</td>
-                        <td>
-                          <b>Unduh</b>
-                        </td>
-                      </tr>
+                      {wartaJemaat.map((wartaJemaat) => (
+                        <tr key={wartaJemaat.id}>
+                          <td>{wartaJemaat.name}</td>
+                          {/* <td>
+                            <div
+                              dangerouslySetInnerHTML={{
+                                __html: wartaJemaat.url,
+                              }}
+                            ></div>
+                            <embed
+                              src={PDF}
+                              type="application/pdf"
+                              height={800}
+                              width={500}
+                            />
+                          </td> */}
+                          <td className="d-flex justify-content-center align-items-center">
+                            {/* <Link to="/" className="btn btn-primary px-2">
+                              Lihat
+                            </Link> */}
+                            <NavLink
+                              to={`/warta-jemaat/warta-jemaat-pdf/${wartaJemaat.id}`}
+                              className="btn btn-primary"
+                            >
+                              View PDF
+                            </NavLink>
+                            {/* <a
+                              href="/"
+                              onclick="return false;"
+                              className="btn btn-primary"
+                            >
+                              Unduh
+                            </a> */}
+                          </td>
+                        </tr>
+                      ))}
                     </tbody>
                   </table>
                 </div>

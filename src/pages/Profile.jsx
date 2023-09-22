@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import axios from "axios";
 
 const Profile = () => {
+  const [profile, setProfile] = useState([]);
+
+  useEffect(() => {
+    getProfile();
+  }, []);
+
+  const getProfile = async () => {
+    const response = await axios.get(
+      `${process.env.REACT_APP_GET_API}/profile`
+    );
+    setProfile(response.data);
+  };
+
   return (
     <>
       <div className="main">
@@ -18,32 +32,17 @@ const Profile = () => {
               </Col>
             </Row>
           </div>
-          <div className="jadwal-content">
+          <div className="jadwal-content d-flex">
             <Container>
-              <Row>
-                <Col>
-                  <h5>Sejarah GKJ Salib Putih</h5>
-                  <p className="text-start">
-                    Gereja Kristen Jawa (GKJ) Salib Putih (Jawa:
-                    ꦒꦿꦺꦗꦱꦭꦶꦧ꧀ꦥꦸꦠꦶꦃꦱꦭꦠꦶꦒ, translit. Gréja Salib Putih Salatiga)
-                    adalah bangunan gereja di bawah naungan sinode Gereja
-                    Kristen Jawa yang terletak di Jalan Hasanudin km. 4 (Kota
-                    Salatiga–Kopeng), Kelurahan Kumpulrejo, Kecamatan Argomulyo,
-                    Kota Salatiga, Provinsi Jawa Tengah. Gereja tersebut
-                    merupakan satu-satunya gereja di Kota Salatiga yang
-                    menggunakan atap mansard. Keberadaannya menjadi salah satu
-                    bukti fisik penyebaran agama Kristen di kawasan Kabupaten
-                    Semarang dan Kota Salatiga. Hingga tahun 2020, kondisi
-                    bangunannya terawat dengan baik serta difungsikan sebagai
-                    tempat ibadah rutin umat Kristen di sekitar kawasan itu.
-                    Pendirian GKJ Salib Putih maupun bangunan lain di kawasan
-                    Agrowisata Salib Putih bermula dari komite pelayanan sosial
-                    pimpinan Adolph Theodoor Jocobus van Emmerick dan Alice
-                    Cornelia Cleverly yang mulai menempati kawasan itu pada 14
-                    Mei 1902.
-                  </p>
-                </Col>
-                <Col>
+              {profile.map((profile) => (
+                <Row className="text-start">
+                  <Col>
+                    <h2>{profile.judul}</h2>
+                    <div
+                      dangerouslySetInnerHTML={{ __html: profile.keterangan }}
+                    ></div>
+                  </Col>
+                  {/* <Col>
                   <h5>Visi</h5>
                   <p className="text-start">
                     Terwujudnya jemaat yang memiliki kepribadian Kristen dengan
@@ -84,8 +83,9 @@ const Profile = () => {
                       bagi sesama.
                     </li>
                   </p>
-                </Col>
-              </Row>
+                </Col> */}
+                </Row>
+              ))}
             </Container>
           </div>
         </Container>
