@@ -42,7 +42,7 @@ function NavScrollExample() {
               Profil
             </NavLink>
             <NavLink to="/artikel" className="nav-link">
-              Profil
+              Artikel
             </NavLink>
             <NavDropdown title="Lainnya">
               <NavDropdown.Item href="/kegiatan" className="nav-link">

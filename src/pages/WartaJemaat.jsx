@@ -74,19 +74,19 @@ const WartaJemaat = () => {
                             {/* <Link to="/" className="btn btn-primary px-2">
                               Lihat
                             </Link> */}
-                            <NavLink
+                            {/* <NavLink
                               to={`/warta-jemaat/warta-jemaat-pdf/${wartaJemaat.id}`}
                               className="btn btn-primary"
+                              retur
                             >
-                              View PDF
-                            </NavLink>
-                            {/* <a
-                              href="/"
-                              onclick="return false;"
-                              className="btn btn-primary"
+                              <b>Unduh</b>
+                            </NavLink> */}
+                            <NavLink
+                              to={`/warta-jemaat/warta-jemaat-pdf/${wartaJemaat.id}`}
+                              target="_blank"
                             >
                               Unduh
-                            </a> */}
+                            </NavLink>
                           </td>
                         </tr>
                       ))}

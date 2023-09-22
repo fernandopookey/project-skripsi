@@ -3,61 +3,76 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 const WartaJemaatDownload = () => {
+  // const [wartaJemaat, setWartaJemaat] = useState([]);
+  // const getWartaJemaat = async () => {
+  //   const response = await axios.get(
+  //     `${process.env.REACT_APP_GET_API}/wartajemaat`
+  //   );
+  //   setWartaJemaat(response.data);
+  // };
+
+  // useEffect(() => {
+  //   getWartaJemaat();
+  // }, []);
+
   // const dispatch = useDispatch();
 
-  const [name, setName] = useState("");
-  const [token, setToken] = useState("");
-  const [expire, setExpire] = useState("");
+  const [title, setTitle] = useState("");
+  const [file, setFile] = useState("");
   const [preview, setPreview] = useState("");
   const { id } = useParams();
   // const navigate = useNavigate();
-  const [pdfError, setPdfError] = useState(null);
-  const allowedFiles = ["application/pdf"];
-  const [msg, setMsg] = useState("");
-  const [title, setTitle] = useState("");
-  const [file, setFile] = useState("");
-  const [pdfFile, setPdfFile] = useState(null);
 
   useEffect(() => {
-    getWartaJemaatById();
+    getSliderById();
   }, []);
 
-  const getWartaJemaatById = async () => {
+  const getSliderById = async () => {
     const response = await axios.get(
       `${process.env.REACT_APP_GET_API}/wartajemaat/${id}`
     );
-    setTitle(response.data.name);
-    setFile(response.data.file);
-    // setPreview(response.data.url);
+    setTitle(response.data.title);
+    setFile(response.data.document);
+    setPreview(response.data.url);
   };
 
-  const handleFile = (e) => {
-    let selectedFile = e.target.files[0];
-    setFile(selectedFile);
-    if (selectedFile) {
-      if (selectedFile && allowedFiles.includes(selectedFile.type)) {
-        let reader = new FileReader();
-        reader.readAsDataURL(selectedFile);
-        reader.onloadend = (e) => {
-          setPdfError("");
-          setPdfFile(e.target.result);
-          // console.log(e.target.result);
-        };
-      } else {
-        setPdfError("invalid");
-      }
-    } else {
-      console.log("Select");
-    }
+  const loadImage = (e) => {
+    const image = e.target.files[0];
+    setFile(image);
+    setPreview(URL.createObjectURL(image));
   };
+
+  // const updateSlider = async (e) => {
+  //   e.preventDefault();
+  //   const formData = new FormData();
+  //   formData.append("file", file);
+  //   formData.append("title", title);
+  //   try {
+  //     await axios.patch(
+  //       `${process.env.REACT_APP_GET_API}/slider/${id}`,
+  //       formData
+  //     );
+  //     swal({
+  //       title: "Sukses",
+  //       text: "Data berhasil diubah",
+  //       icon: "success",
+  //       button: "Ok",
+  //     });
+  //     navigate("/slider");
+  //   } catch (error) {
+  //     if (error.response) {
+  //       setMsg(error.response.data.msg);
+  //     }
+  //   }
+  // };
 
   return (
     <div>
       <div>
         <h4>Detail Warta</h4>
-        <p>{title}</p>
+        {/* <p>{title}</p> */}
         {/* <embed src={document} type="application/pdf" /> */}
-        <object data={file} type=""></object>
+        <iframe src={document} frameborder="0"></iframe>
       </div>
     </div>
   );
