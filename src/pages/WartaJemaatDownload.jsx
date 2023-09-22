@@ -33,11 +33,13 @@ const WartaJemaatDownload = () => {
 
   return (
     <div>
-      <div>
-        <h4>Detail Warta</h4>
-        {/* <p>{title}</p> */}
-        <iframe src={preview} frameborder="0"></iframe>
-      </div>
+      {/* <p>{title}</p> */}
+      <iframe
+        src={preview}
+        frameborder="0"
+        width="100%"
+        height="700px"
+      ></iframe>
     </div>
   );
 };
