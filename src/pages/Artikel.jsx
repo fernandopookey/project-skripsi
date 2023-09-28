@@ -4,6 +4,8 @@ import { Col, Container, Row } from "react-bootstrap";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { Link } from "react-router-dom";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
 
 const Artikel = () => {
   const [artikel, setArtikel] = useState([]);
@@ -40,24 +42,27 @@ const Artikel = () => {
               <h4>Renungan</h4>
             </Col>
           </Row> */}
-          <Row className="renungan-row">
+          <Row className="renungan-row d-flex justify-content-around">
             {artikel.map((artikel) => (
-              <Col className="columns data-columns" lg={4} md={6}>
-                <div className="renungan-data">
-                  <h5 className="renungan-title">{artikel.judul}</h5>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: artikel.deskripsi.substring(0, 100),
-                    }}
-                  ></p>
+              <Card className="article-card" style={{ width: "18rem" }}>
+                <Card.Img variant="top" className="mt-2" src={artikel.url} />
+                <Card.Body>
+                  <Card.Title>{artikel.judul}</Card.Title>
+                  <Card.Text>
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: artikel.deskripsi.substring(0, 100),
+                      }}
+                    ></p>
+                  </Card.Text>
                   <Link
                     to={`/artikel/detail-artikel/${artikel.id}`}
                     className="btn btn-primary renungan-btn"
                   >
                     Lihat Selengkapnya
                   </Link>
-                </div>
-              </Col>
+                </Card.Body>
+              </Card>
             ))}
           </Row>
         </Container>

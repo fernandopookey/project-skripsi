@@ -55,3 +55,10 @@
 //     background-color: aqua;
 //     margin: 5px 10px 5px 10px;
 // }
+
+.article-card {
+    @include mobile {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
